@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      - id: createUsers.yml
+        author: carolina.sarateanu
+        failOnError: true
+        changes:
+      - sql:
+          dbms: 'postgresql'
+          splitStatements: false
+          sql: create table users(
+                                  stateId varchar(50), 
+                                  name varchar(50),
+                                  gender varchar(50),
+                                  probability numeric, 
+                                  year integer
+            );
