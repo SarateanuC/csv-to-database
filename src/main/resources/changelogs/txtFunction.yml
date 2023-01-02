@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      - id: 20221230_csvToTable.yml
+        author: carolina.sarateanu
+        failOnError: true
+        changes:
+      - sql:
+          dbms: 'postgresql'
+          splitStatements: false
+          sql:  CREATE OR REPLACE FUNCTION copy_from_txt(IN path text) RETURNS void AS $$
+            BEGIN
+            EXECUTE format('COPY user_txt(state_id,gender,year,name,number) FROM %L DELIMITER '',''', path);
+            END;
+            $$ LANGUAGE plpgsql;

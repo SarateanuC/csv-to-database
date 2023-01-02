@@ -1,7 +1,13 @@
 databaseChangeLog:
   - include:
-      - file: createUsers.yml
+      - file: createUsersCsv.yml
       - relativeToChangelogFile: true
   - include:
-      - file: csvToTable.yml
+      - file: csvFunction.yml
+      - relativeToChangelogFile: true
+  - include:
+      - file: createUsersTxt.yml
+      - relativeToChangelogFile: true
+  - include:
+      - file: txtFunction.yml
       - relativeToChangelogFile: true

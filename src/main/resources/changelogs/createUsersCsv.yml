@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      - id: createUsersCsv.yml
+        author: carolina.sarateanu
+        failOnError: true
+        changes:
+      - sql:
+          dbms: 'postgresql'
+          splitStatements: false
+          sql: create table user_csv(
+            id serial primary key,
+            name varchar(50),
+            gender varchar(50),
+            probability numeric
+            );

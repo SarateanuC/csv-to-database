@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      - id: 20221230_csvToTable.yml
+        author: carolina.sarateanu
+        failOnError: true
+        changes:
+      - sql:
+          dbms: 'postgresql'
+          splitStatements: false
+          sql:  CREATE OR REPLACE FUNCTION copy_from_csv(IN path text) RETURNS void AS $$
+                BEGIN
+                EXECUTE format('COPY user_csv(name,gender,probability) FROM %L WITH DELIMITER '','' CSV HEADER', path);
+                END;
+                $$ LANGUAGE plpgsql;
+
+
+
+

@@ -4,11 +4,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="init project" />
+    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="importByScript: add test-script">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_docker_java_docker_java_api_3_2_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_docker_java_docker_java_transport_3_2_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_docker_java_docker_java_transport_zerodep_3_2_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_5_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_17_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_rnorth_duct_tape_duct_tape_1_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testcontainers_database_commons_1_17_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testcontainers_jdbc_1_17_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testcontainers_junit_jupiter_1_17_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testcontainers_postgresql_1_17_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testcontainers_testcontainers_1_17_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/CsvUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/TxtUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/UserCsv.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/UserTxt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/CsvUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/TxtUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/CsvUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/TxtUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/changelogs/createUsersCsv.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/changelogs/createUsersTxt.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/changelogs/csvFunction.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/changelogs/txtFunction.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/CsvToDatabaseIntegrationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/TxtToDatabaseIntegrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv-to-database.iml" beforeDir="false" afterPath="$PROJECT_DIR$/csv-to-database.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csvtodatabase/CsvToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csvtodatabase/service/CsvService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/changelogs/changelog.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/changelogs/changelog.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/changelogs/createUsers.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/changelogs/csvToTable.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/csvtodatabase/CsvToDatabaseApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -29,20 +77,104 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/administrator/IdeaProjects/work/github/csv-to-database&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/administrator/IdeaProjects/work/github/file-to-database",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "a897348dcd5a826b4f90df354a1644d9",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="JUnit.CsvToDatabaseIntegrationTests.copyFromCsvTest (1)">
+    <configuration name="CsvToDatabaseIntegrationTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csv-to-database" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.fileToDatabase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.fileToDatabase" />
+      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.CsvToDatabaseIntegrationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CsvToDatabaseIntegrationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csv-to-database" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.fileToDatabase.integrationTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.fileToDatabase.integrationTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.integrationTest.CsvToDatabaseIntegrationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CsvToDatabaseIntegrationTests.copyFromCsvTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csv-to-database" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.fileToDatabase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.fileToDatabase" />
+      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.CsvToDatabaseIntegrationTests" />
+      <option name="METHOD_NAME" value="copyFromCsvTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CsvToDatabaseIntegrationTests.copyFromCsvTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csv-to-database" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.fileToDatabase.integrationTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.fileToDatabase.integrationTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.integrationTest.CsvToDatabaseIntegrationTests" />
+      <option name="METHOD_NAME" value="copyFromCsvTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CsvToDatabaseIntegrationTests.verityGenderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csv-to-database" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.fileToDatabase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.fileToDatabase" />
+      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.CsvToDatabaseIntegrationTests" />
+      <option name="METHOD_NAME" value="verityGenderTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CsvToDatabaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="csv-to-database" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.csvtodatabase.CsvToDatabaseApplication" />
@@ -50,6 +182,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CsvToDatabaseIntegrationTests.copyFromCsvTest (1)" />
+        <item itemvalue="JUnit.CsvToDatabaseIntegrationTests.verityGenderTest" />
+        <item itemvalue="JUnit.CsvToDatabaseIntegrationTests (1)" />
+        <item itemvalue="JUnit.CsvToDatabaseIntegrationTests" />
+        <item itemvalue="JUnit.CsvToDatabaseIntegrationTests.copyFromCsvTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,6 +202,8 @@
       <updated>1672388820496</updated>
       <workItem from="1672388821616" duration="4000" />
       <workItem from="1672389653870" duration="967000" />
+      <workItem from="1672646765468" duration="15827000" />
+      <workItem from="1672663418035" duration="6912000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1672389688797</created>
@@ -69,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672389688797</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="importByScript: add test-script">
+      <created>1672408103518</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672408103518</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,6 +238,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
-    <option name="LAST_COMMIT_MESSAGE" value="init project" />
+    <MESSAGE value="importByScript: add test-script" />
+    <option name="LAST_COMMIT_MESSAGE" value="importByScript: add test-script" />
   </component>
 </project>
