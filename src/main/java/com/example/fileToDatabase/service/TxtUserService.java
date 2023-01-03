@@ -13,8 +13,8 @@ public class TxtUserService {
         txtUserRepository.copyFromTxt(path);
     }
 
-    public String verifyGender(String name,Integer year) {
-        return txtUserRepository.findUserCsvByNameAndYear(name,year)
+    public String verifyGender(Integer id) {
+        return txtUserRepository.findById(id)
                 .orElseThrow()
                 .getGender();
     }

@@ -16,7 +16,7 @@ public class TxtUserController {
     }
 
     @GetMapping("/gender")
-    public String verifyGender(@RequestParam("name") String name,@RequestParam("year")Integer year){
-       return txtUserService.verifyGender(name,year);
+    public String verifyGender(@RequestParam("id")Integer id){
+       return txtUserService.verifyGender(id);
     }
 }
