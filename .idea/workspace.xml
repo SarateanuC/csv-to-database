@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="import-by-script: add Testcontainers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/TxtUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/TxtUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/TxtUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/TxtUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/TxtUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/TxtUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/CsvToDatabaseIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/CsvToDatabaseIntegrationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/TxtToDatabaseIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/TxtToDatabaseIntegrationTests.java" afterDir="false" />
     </list>
@@ -63,23 +60,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.TxtToDatabaseIntegrationTests">
-    <configuration name="CsvToDatabaseIntegrationTests.copyFromCsvTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="csv-to-database" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.fileToDatabase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.fileToDatabase" />
-      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.CsvToDatabaseIntegrationTests" />
-      <option name="METHOD_NAME" value="copyFromCsvTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.FileToDatabaseApplication">
     <configuration name="CsvToDatabaseIntegrationTests.verityGenderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="csv-to-database" />
       <extension name="coverage">
@@ -150,13 +131,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FileToDatabaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="csv-to-database" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.fileToDatabase.FileToDatabaseApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.fileToDatabase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.FileToDatabaseApplication" />
         <item itemvalue="JUnit.TxtToDatabaseIntegrationTests" />
         <item itemvalue="JUnit.TxtToDatabaseIntegrationTests.verifyGenderTest" />
         <item itemvalue="JUnit.TxtToDatabaseIntegrationTests.copyFromTxtTest" />
         <item itemvalue="JUnit.CsvToDatabaseIntegrationTests.verityGenderTest" />
-        <item itemvalue="JUnit.CsvToDatabaseIntegrationTests.copyFromCsvTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +166,7 @@
       <workItem from="1672389653870" duration="967000" />
       <workItem from="1672646765468" duration="15827000" />
       <workItem from="1672663418035" duration="8509000" />
-      <workItem from="1672732199928" duration="8275000" />
+      <workItem from="1672732199928" duration="16798000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1672389688797</created>
@@ -202,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672741851152</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="import-by-script: add Testcontainers">
+      <created>1672741918750</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672741918750</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

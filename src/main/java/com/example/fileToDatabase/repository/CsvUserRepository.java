@@ -9,8 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface CsvUserRepository extends JpaRepository<UserCsv, Integer> {
-    //    @Transactional
-//    @Modifying
     @Query("select copy_from_csv(:filename)")
     void copyFromCsv(String filename);
 

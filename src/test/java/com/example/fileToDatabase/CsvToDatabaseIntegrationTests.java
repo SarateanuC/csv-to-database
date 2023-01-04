@@ -84,7 +84,7 @@ public class CsvToDatabaseIntegrationTests {
     @SneakyThrows
     void copyFromCsvTest() {
         mockMvc.perform(
-                        post("http://localhost:8086/api/csv-users/" +
+                        post("http://localhost:8081/api/csv-users/" +
                                 "add?path=/docker-entrypoint-initdb.d/name_gender.csv")
                                 .contentType("application/json"))
                 .andExpect(status().isOk());
@@ -97,7 +97,7 @@ public class CsvToDatabaseIntegrationTests {
     void verityGenderTest() {
         csvUserService.copyUsersFromCsv("/docker-entrypoint-initdb.d/name_gender.csv");
         MvcResult mvcResult = mockMvc.perform(
-                        get("http://localhost:8086/api/csv-users/gender?name=Aaden")
+                        get("http://localhost:8081/api/csv-users/gender?name=Aaden")
                                 .contentType("application/json"))
                 .andExpect(status().isOk())
                 .andReturn();

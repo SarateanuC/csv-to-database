@@ -78,7 +78,7 @@ class TxtToDatabaseIntegrationTests {
     @SneakyThrows
     void copyFromTxtTest() {
         mockMvc.perform(
-                        post("http://localhost:8086/api/txt-users/" +
+                        post("http://localhost:8081/api/txt-users/" +
                                 "add?path=/docker-entrypoint-initdb.d/namesbystate/AK.TXT")
                                 .contentType("application/json"))
                 .andExpect(status().isOk());
@@ -91,7 +91,7 @@ class TxtToDatabaseIntegrationTests {
     void verifyGenderTest() {
         txtUserService.copyUsersFromTxt("/docker-entrypoint-initdb.d/namesbystate/AK.TXT");
         MvcResult mvcResult = mockMvc.perform(
-                        get("http://localhost:8086/api/txt-users/gender?id=5")
+                        get("http://localhost:8081/api/txt-users/gender?id=5")
                                 .contentType("application/json"))
                 .andExpect(status().isOk())
                 .andReturn();
