@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      - id: createUsersCsv.yml
+        author: carolina.sarateanu
+        failOnError: true
+        changes:
+      - sql:
+          dbms: 'postgresql'
+          splitStatements: false
+          sql: create table user_xml(
+            Ид serial primary key,
+            ИдДок uuid not null,
+            ДатаСост varchar(50) not null,
+            ДатаВклМСП varchar(50) not null,
+            ВидСубМСП varchar(50) not null,
+            КатСубМСП varchar(50) not null,
+            ПризНовМСП varchar(50) not null,
+            СведСоцПред varchar(50) not null,
+            ИННФЛ varchar(50) not null,
+            ОГРНИП varchar(50) not null,
+            КодРегион varchar(50) not null,
+            Тип varchar(50) not null,
+            Наим varchar(50) not null,
+            Тип varchar(50) not null,
+            Наим varchar(50) not null,
+            КодОКВЭД varchar(50) not null,
+            НаимОКВЭД varchar(50) not null,
+            ВерсОКВЭД varchar(50) not null
+            );

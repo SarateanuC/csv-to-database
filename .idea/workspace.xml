@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="import-by-script: add Testcontainers">
+    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="import-by-script: remove unnecessary annotations">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/UserXml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/TestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/XmlUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/changelogs/createUsersXml.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/CsvToDatabaseIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/CsvToDatabaseIntegrationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/TxtToDatabaseIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/TxtToDatabaseIntegrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +169,8 @@
       <workItem from="1672646765468" duration="15827000" />
       <workItem from="1672663418035" duration="8509000" />
       <workItem from="1672732199928" duration="16798000" />
+      <workItem from="1672818247705" duration="5900000" />
+      <workItem from="1672905433201" duration="22249000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1672389688797</created>
@@ -203,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672741918750</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="import-by-script: remove unnecessary annotations">
+      <created>1672818427719</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1672818427719</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +236,7 @@
     <MESSAGE value="importByScript: add test-script" />
     <MESSAGE value="importByScript: update task" />
     <MESSAGE value="import-by-script: add Testcontainers" />
-    <option name="LAST_COMMIT_MESSAGE" value="import-by-script: add Testcontainers" />
+    <MESSAGE value="import-by-script: remove unnecessary annotations" />
+    <option name="LAST_COMMIT_MESSAGE" value="import-by-script: remove unnecessary annotations" />
   </component>
 </project>
