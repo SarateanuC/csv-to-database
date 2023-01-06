@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 @Entity
 @Builder
 @Setter
@@ -12,7 +14,6 @@ import lombok.*;
 @NoArgsConstructor
 public class UserXml {
     @Id
-    private Integer id;
     private String documentId;
     private String documentCreationDate;
     private String ONDate;
@@ -28,5 +29,5 @@ public class UserXml {
     private String regionName;
     private String cityType;
     private String cityName;
-    private StringBuilder text;
+    private AtomicReference<StringBuilder> text;
 }

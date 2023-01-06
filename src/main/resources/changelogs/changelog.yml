@@ -11,3 +11,9 @@ databaseChangeLog:
   - include:
       - file: txtFunction.yml
       - relativeToChangelogFile: true
+  - include:
+     - file: createUsersXml.yml
+     - relativeToChangelogFile: true
+  - include:
+     - file: xmlFunction.yml
+     - relativeToChangelogFile: true

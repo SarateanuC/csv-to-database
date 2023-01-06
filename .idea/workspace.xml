@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="import-by-script: remove unnecessary annotations">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/UserXml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/TestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/XmlUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/changelogs/createUsersXml.yml" afterDir="false" />
+    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="import-by-script: add service for xml extension">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_csv_2_14_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/XmlController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/XmlRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/changelogs/xmlFunction.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv-to-database.iml" beforeDir="false" afterPath="$PROJECT_DIR$/csv-to-database.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/UserXml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/UserXml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/TestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/XmlUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/XmlUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/changelogs/changelog.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/changelogs/changelog.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/changelogs/createUsersXml.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/changelogs/createUsersXml.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,25 +51,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/administrator/IdeaProjects/work/github/file-to-database&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;a897348dcd5a826b4f90df354a1644d9&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/administrator/IdeaProjects/work/github/file-to-database",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "a897348dcd5a826b4f90df354a1644d9",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.FileToDatabaseApplication">
     <configuration name="CsvToDatabaseIntegrationTests.verityGenderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="csv-to-database" />
@@ -170,7 +178,8 @@
       <workItem from="1672663418035" duration="8509000" />
       <workItem from="1672732199928" duration="16798000" />
       <workItem from="1672818247705" duration="5900000" />
-      <workItem from="1672905433201" duration="22249000" />
+      <workItem from="1672905433201" duration="25351000" />
+      <workItem from="1672992554675" duration="11863000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1672389688797</created>
@@ -214,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672818427719</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="import-by-script: add service for xml extension">
+      <created>1672931986955</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1672931986955</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +253,7 @@
     <MESSAGE value="importByScript: update task" />
     <MESSAGE value="import-by-script: add Testcontainers" />
     <MESSAGE value="import-by-script: remove unnecessary annotations" />
-    <option name="LAST_COMMIT_MESSAGE" value="import-by-script: remove unnecessary annotations" />
+    <MESSAGE value="import-by-script: add service for xml extension" />
+    <option name="LAST_COMMIT_MESSAGE" value="import-by-script: add service for xml extension" />
   </component>
 </project>

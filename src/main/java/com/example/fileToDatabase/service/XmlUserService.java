@@ -1,6 +1,12 @@
 package com.example.fileToDatabase.service;
 
 import com.example.fileToDatabase.entity.UserXml;
+import com.example.fileToDatabase.repository.XmlRepository;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.dataformat.csv.CsvMapper;
+import com.fasterxml.jackson.dataformat.csv.CsvSchema;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
@@ -14,16 +20,20 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.IntStream;
 
 @Service
+@RequiredArgsConstructor
 public class XmlUserService {
+    private final XmlRepository xmlRepository;
+
     @SneakyThrows
     public List<UserXml> copyUsersToTable(String path) {
-        File xml = new File(path);
+        File xmlTest = new File(path);
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
-        Document doc = db.parse(xml);
+        Document doc = db.parse(xmlTest);
         doc.getDocumentElement().normalize();
         NodeList nodeList = doc.getElementsByTagName("Документ");
         return IntStream.range(0, nodeList.getLength()).mapToObj(nodeList::item)
@@ -34,34 +44,35 @@ public class XmlUserService {
 
     private UserXml createUserXml(Node docNode) {
         Element eElementParent = (Element) docNode;
-        NodeList childNodes = eElementParent.getChildNodes();
+
+        NodeList childNodes = docNode.getChildNodes();
         Map<String, String> nameDetails = new HashMap<>();
         Map<String, String> regionAndCityDetails = new HashMap<>();
-        StringBuilder finalText = new StringBuilder();
-        for (int itr = 0; itr < childNodes.getLength(); itr++) {
-            Node node = childNodes.item(itr);
-            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                Element eElement = (Element) node;
-                if (eElement.getTagName() == "ИПВклМСП") {
-                    Map<String, String> userName = getUserName(node);
-                    String lastname = userName.get("Фамилия");
-                    String firstname = userName.get("Имя");
-                    String patronymic = userName.get("Отчество");
-                    nameDetails.put("firstname", firstname);
-                    nameDetails.put("lastname", lastname);
-                    nameDetails.put("patronymic", patronymic);
-                }
-                if (eElement.getTagName() == "СведМН") {
-                    regionAndCityDetails.put("Code", eElement.getAttribute("КодРегион"));
-                    Map<String, String> stringStringMap = regionAndCity(node);
-                    regionAndCityDetails.put("type", stringStringMap.get("Тип"));
-                    regionAndCityDetails.put("name", stringStringMap.get("Наим"));
-                }
-                if (eElement.getTagName() == "СвОКВЭД") {
-                    finalText = getText(node);
-                }
-            }
-        }
+        AtomicReference<StringBuilder> finalText = new AtomicReference<>(new StringBuilder());
+        IntStream.range(0, childNodes.getLength())
+                .mapToObj(childNodes::item)
+                .forEach(basicNode -> {
+                    Element eElementBasic = (Element) basicNode;
+                    if ("ИПВклМСП".equals(eElementBasic.getTagName())) {
+                        Map<String, String> fullName = getNameDetails(eElementBasic);
+                        nameDetails.put("firstname", fullName.get("firstname"));
+                        nameDetails.put("lastname", fullName.get("lastname"));
+                        nameDetails.put("patronymic", fullName.get("patronymic"));
+                    }
+                    if ("СведМН".equals(eElementBasic.getTagName())) {
+                        Map<String, String> locationDetails = getLocationDetails(eElementBasic);
+                        regionAndCityDetails.put("Code", locationDetails.get("Code"));
+                        regionAndCityDetails.put("region type", locationDetails.get("region type"));
+                        regionAndCityDetails.put("region name", locationDetails.get("region name"));
+                        regionAndCityDetails.put("city type", locationDetails.get("city type"));
+                        regionAndCityDetails.put("city name", locationDetails.get("city name"));
+
+                    }
+                    if ("СвОКВЭД".equals(eElementBasic.getTagName())) {
+                        finalText.set(getText(eElementBasic));
+                    }
+                });
+
         return UserXml.builder()
                 .category(eElementParent.getAttribute("КатСубМСП"))
                 .ONDate(eElementParent.getAttribute("ДатаВклМСП"))
@@ -72,66 +83,104 @@ public class XmlUserService {
                 .details(eElementParent.getAttribute("СведСоцПред"))
                 .firstname(nameDetails.get("firstname"))
                 .lastname(nameDetails.get("lastname"))
+                .regionCode(regionAndCityDetails.get("Code"))
                 .patronymic(nameDetails.get("patronymic"))
-                .regionType(regionAndCityDetails.get("type"))
-                .regionName(regionAndCityDetails.get("name"))
-                .cityType(regionAndCityDetails.get("type"))
-                .cityName(regionAndCityDetails.get("name"))
+                .regionType(regionAndCityDetails.get("region type"))
+                .regionName(regionAndCityDetails.get("region name"))
+                .cityType(regionAndCityDetails.get("city type"))
+                .cityName(regionAndCityDetails.get("city name"))
                 .text(finalText)
                 .build();
-
     }
 
 
-    private Map<String, String> getUserName(Node node) {
-        NodeList childNodeName = node.getChildNodes();
+    private Map<String, String> getNameDetails(Element element) {
         Map<String, String> name = new HashMap<>();
-        int i = 0;
-        while (i < childNodeName.getLength()) {
-            Node item = childNodeName.item(i);
-            if (item.getNodeType() == Node.ELEMENT_NODE) {
-                Element item1 = (Element) item;
-                String lastname = item1.getAttribute("Фамилия");
-                String firstname = item1.getAttribute("Имя");
-                String patronymic = item1.getAttribute("Отчество");
-                name.put("firstname", firstname);
-                name.put("lastname", lastname);
-                name.put("patronymic", patronymic);
-            }
-        }
+        NodeList childNodes1 = element.getChildNodes();
+        Node item = childNodes1.item(0);
+        Element item1 = (Element) item;
+        String firstname = item1.getAttribute("Имя");
+        String lastname = item1.getAttribute("Фамилия");
+        String patronymic = item1.getAttribute("Отчество");
+        name.put("firstname", firstname);
+        name.put("lastname", lastname);
+        name.put("patronymic", patronymic);
         return name;
     }
 
-    private Map<String, String> regionAndCity(Node node) {
-        NodeList childNodeRegion = node.getChildNodes();
-        Map<String, String> cityAndRegion = new HashMap<>();
-        IntStream.range(0, childNodeRegion.getLength())
-                .mapToObj(childNodeRegion::item)
-                .filter(item -> item.getNodeType() == Node.ELEMENT_NODE)
-                .map(item -> (Element) item).forEach(item2 -> {
-                    String type = item2.getAttribute("Тип");
-                    String name = item2.getAttribute("Наим");
-                    cityAndRegion.put("Тип", type);
-                    cityAndRegion.put("Наим", name);
+    private Map<String, String> getLocationDetails(Element element) {
+        Map<String, String> location = new HashMap<>();
+        location.put("Code", element.getAttribute("КодРегион"));
+        NodeList secondNodeChilds = element.getChildNodes();
+        IntStream.range(0, secondNodeChilds.getLength())
+                .mapToObj(secondNodeChilds::item)
+                .forEach(childNode -> {
+                    Element element2 = (Element) childNode;
+                    if ("Регион".equals(childNode.getNodeName())) {
+                        location.put("region type", element2.getAttribute("Тип"));
+                        location.put("region name", element2.getAttribute("Наим"));
+                    }
+                    if ("Город".equals(childNode.getNodeName())) {
+                        location.put("city type", element2.getAttribute("Тип"));
+                        location.put("city name", element2.getAttribute("Наим"));
+                    }
+
                 });
-        return cityAndRegion;
+        return location;
     }
 
-    private StringBuilder getText(Node node) {
-        NodeList childNodeText = node.getChildNodes();
-        StringBuilder builder = new StringBuilder();
-        IntStream.range(0, childNodeText.getLength())
-                .mapToObj(childNodeText::item)
-                .filter(item -> item.getNodeType() == Node.ELEMENT_NODE)
-                .map(item -> (Element) item).forEach(item3 -> {
-                    String code = item3.getAttribute("КодОКВЭД");
-                    String text = item3.getAttribute("НаимОКВЭД");
-                    String version = item3.getAttribute("ВерсОКВЭД");
+
+    private StringBuilder getText(Element element) {
+        StringBuilder wholeRow = new StringBuilder();
+        NodeList thirdNodeChilds = element.getChildNodes();
+        int bound = thirdNodeChilds.getLength();
+        for (int i = 0; i < bound; i++) {
+            Node nodeChild = thirdNodeChilds.item(i);
+            if (nodeChild.getNodeType() == Node.ELEMENT_NODE) {
+                Element eElement3 = (Element) nodeChild;
+                if ("СвОКВЭДОсн".equals(nodeChild.getNodeName()) || "СвОКВЭДДоп".equals(nodeChild.getNodeName())) {
+                    String code = eElement3.getAttribute("КодОКВЭД");
+                    String text = eElement3.getAttribute("НаимОКВЭД");
+                    String version = eElement3.getAttribute("ВерсОКВЭД");
                     String concat = " КодОКВЭД: " + code +
                             " НаимОКВЭД: " + text +
                             " ВерсОКВЭД: " + version;
-                    builder.append(concat);
-                });
-        return builder;
+                    wholeRow.append(concat);
+                }
+            }
+        }
+        return wholeRow;
+    }
+
+    @SneakyThrows
+    public void copyToCsv(List<UserXml> list) {
+        File csvOutputFile = new File("/home/administrator/Downloads/files/user_output.csv");
+
+        CsvMapper mapper = new CsvMapper();
+        mapper.configure(JsonGenerator.Feature.IGNORE_UNKNOWN, true);
+
+        CsvSchema schema = CsvSchema.builder().setUseHeader(true)
+                .addColumn("id")
+                .addColumn("documentId")
+                .addColumn("ONDate")
+                .addColumn("view")
+                .addColumn("details")
+                .addColumn("category")
+                .addColumn("productivity")
+                .addColumn("firstname")
+                .addColumn("lastname")
+                .addColumn("patronymic")
+                .addColumn("regionCode")
+                .addColumn("regionType")
+                .addColumn("regionName")
+                .addColumn(" cityType")
+                .addColumn("cityName")
+                .addColumn("text")
+                .build();
+
+        ObjectWriter writer = mapper.writerFor(UserXml.class).with(schema);
+
+        writer.writeValues(csvOutputFile).writeAll(list);
+        xmlRepository.copyFromXml(csvOutputFile.getPath());
     }
 }
