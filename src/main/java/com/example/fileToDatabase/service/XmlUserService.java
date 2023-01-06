@@ -29,17 +29,20 @@ public class XmlUserService {
     private final XmlRepository xmlRepository;
 
     @SneakyThrows
-    public List<UserXml> copyUsersToTable(String path) {
+    public void copyUsersToTable(String path) {
         File xmlTest = new File(path);
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
         Document doc = db.parse(xmlTest);
         doc.getDocumentElement().normalize();
         NodeList nodeList = doc.getElementsByTagName("Документ");
-        return IntStream.range(0, nodeList.getLength()).mapToObj(nodeList::item)
+        List<UserXml> userXmls = IntStream.range(0, nodeList.getLength()).mapToObj(nodeList::item)
                 .filter(node -> node.getNodeType() == Node.ELEMENT_NODE)
                 .map(this::createUserXml)
                 .toList();
+        String csvFromXml = copyToCsv(userXmls);
+        xmlRepository.copyFromXml(csvFromXml);
+
     }
 
     private UserXml createUserXml(Node docNode) {
@@ -74,11 +77,11 @@ public class XmlUserService {
                 });
 
         return UserXml.builder()
-                .category(eElementParent.getAttribute("КатСубМСП"))
-                .ONDate(eElementParent.getAttribute("ДатаВклМСП"))
-                .documentCreationDate(eElementParent.getAttribute("ДатаСост"))
                 .documentId(eElementParent.getAttribute("ИдДок"))
+                .documentCreationDate(eElementParent.getAttribute("ДатаСост"))
+                .ONDate(eElementParent.getAttribute("ДатаВклМСП"))
                 .productivity(eElementParent.getAttribute("ПризНовМСП"))
+                .category(eElementParent.getAttribute("КатСубМСП"))
                 .view(eElementParent.getAttribute("ВидСубМСП"))
                 .details(eElementParent.getAttribute("СведСоцПред"))
                 .firstname(nameDetails.get("firstname"))
@@ -153,15 +156,15 @@ public class XmlUserService {
     }
 
     @SneakyThrows
-    public void copyToCsv(List<UserXml> list) {
+    public String copyToCsv(List<UserXml> list) {
         File csvOutputFile = new File("/home/administrator/Downloads/files/user_output.csv");
 
         CsvMapper mapper = new CsvMapper();
         mapper.configure(JsonGenerator.Feature.IGNORE_UNKNOWN, true);
 
         CsvSchema schema = CsvSchema.builder().setUseHeader(true)
-                .addColumn("id")
-                .addColumn("documentId")
+                 .addColumn("documentId")
+                .addColumn("creationDate")
                 .addColumn("ONDate")
                 .addColumn("view")
                 .addColumn("details")
@@ -181,6 +184,7 @@ public class XmlUserService {
         ObjectWriter writer = mapper.writerFor(UserXml.class).with(schema);
 
         writer.writeValues(csvOutputFile).writeAll(list);
-        xmlRepository.copyFromXml(csvOutputFile.getPath());
+        System.out.println(csvOutputFile.getPath());
+        return csvOutputFile.getPath();
     }
 }
