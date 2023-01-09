@@ -111,12 +111,9 @@ public class XmlUserService implements FileService {
         NodeList childNodes1 = element.getChildNodes();
         Node item = childNodes1.item(0);
         Element item1 = (Element) item;
-        String firstname = item1.getAttribute("Имя");
-        String lastname = item1.getAttribute("Фамилия");
-        String patronymic = item1.getAttribute("Отчество");
-        name.put("firstname", firstname);
-        name.put("lastname", lastname);
-        name.put("patronymic", patronymic);
+        name.put("firstname", item1.getAttribute("Имя"));
+        name.put("lastname", item1.getAttribute("Фамилия"));
+        name.put("patronymic", item1.getAttribute("Отчество"));
         return name;
     }
 
@@ -145,20 +142,17 @@ public class XmlUserService implements FileService {
     private StringBuilder getText(Element element) {
         StringBuilder wholeRow = new StringBuilder();
         NodeList thirdNodeChilds = element.getChildNodes();
-        int bound = thirdNodeChilds.getLength();
-        for (int i = 0; i < bound; i++) {
-            Node nodeChild = thirdNodeChilds.item(i);
-            Element eElement3 = (Element) nodeChild;
-            if ("СвОКВЭДОсн".equals(nodeChild.getNodeName()) || "СвОКВЭДДоп".equals(nodeChild.getNodeName())) {
-                String code = eElement3.getAttribute("КодОКВЭД");
-                String text = eElement3.getAttribute("НаимОКВЭД");
-                String version = eElement3.getAttribute("ВерсОКВЭД");
-                String concat = " КодОКВЭД: " + code +
-                        " НаимОКВЭД: " + text +
-                        " ВерсОКВЭД: " + version;
-                wholeRow.append(concat);
-            }
-        }
+        IntStream.range(0, thirdNodeChilds.getLength())
+                .mapToObj(thirdNodeChilds::item)
+                .forEach(nodeChild -> {
+                    Element eElement3 = (Element) nodeChild;
+                    if ("СвОКВЭДОсн".equals(nodeChild.getNodeName()) || "СвОКВЭДДоп".equals(nodeChild.getNodeName())) {
+                        String concat = " КодОКВЭД: " + eElement3.getAttribute("КодОКВЭД") +
+                                " НаимОКВЭД: " + eElement3.getAttribute("НаимОКВЭД") +
+                                " ВерсОКВЭД: " + eElement3.getAttribute("ВерсОКВЭД");
+                        wholeRow.append(concat);
+                    }
+                });
         return wholeRow;
     }
 

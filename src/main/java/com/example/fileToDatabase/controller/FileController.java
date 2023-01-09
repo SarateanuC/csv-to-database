@@ -16,7 +16,7 @@ public class FileController {
    private final Map<String,FileService> fileServices ;
 
     @PostMapping("/add")
-    public void copyFromCsv(@RequestParam("path") String path,@RequestParam("extension") String extension) {
+    public void copyFile(@RequestParam("path") String path, @RequestParam("extension") String extension) {
         this.fileServices.get(extension).copyFromFile(path);
     }
 }
