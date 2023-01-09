@@ -1,9 +1,11 @@
 package com.example.fileToDatabase;
 
+import com.example.fileToDatabase.entity.UserCsv;
 import com.example.fileToDatabase.entity.UserTxt;
+import com.example.fileToDatabase.entity.UserXml;
+import com.example.fileToDatabase.repository.CsvUserRepository;
 import com.example.fileToDatabase.repository.TxtUserRepository;
-import com.example.fileToDatabase.service.TxtUserService;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.fileToDatabase.repository.XmlRepository;
 import lombok.SneakyThrows;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterAll;
@@ -17,7 +19,6 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.testcontainers.containers.BindMode;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
@@ -27,7 +28,6 @@ import org.testcontainers.utility.DockerImageName;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -35,15 +35,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(SpringExtension.class)
 @Testcontainers
 @SpringBootTest
-class TxtToDatabaseIntegrationTests {
-    @Autowired
-    private ObjectMapper objectMapper;
+class FileToDatabaseIntegrationTests {
     @Autowired
     private MockMvc mockMvc;
     @Autowired
-    private TxtUserService txtUserService;
-    @Autowired
     private TxtUserRepository txtUserRepository;
+    @Autowired
+    private CsvUserRepository csvUserRepository;
+    @Autowired
+    private XmlRepository xmlRepository;
 
     @Container
     private static final PostgreSQLContainer POSTGRES_SQL_CONTAINER =
@@ -78,25 +78,35 @@ class TxtToDatabaseIntegrationTests {
     @SneakyThrows
     void copyFromTxtTest() {
         mockMvc.perform(
-                        post("http://localhost:8081/api/txt-users/" +
-                                "add?path=/docker-entrypoint-initdb.d/namesbystate/AK.TXT")
+                        post("http://localhost:8081/api/file/" +
+                                "add?path=/docker-entrypoint-initdb.d/namesbystate/AK.TXT&extension=TXT")
                                 .contentType("application/json"))
                 .andExpect(status().isOk());
         List<UserTxt> all = txtUserRepository.findAll();
-        Assertions.assertThat(all.size()).isEqualTo(59510);
+        Assertions.assertThat(all.size()).isEqualTo(29755);
     }
 
     @Test
     @SneakyThrows
-    void verifyGenderTest() {
-        txtUserService.copyUsersFromTxt("/docker-entrypoint-initdb.d/namesbystate/AK.TXT");
-        MvcResult mvcResult = mockMvc.perform(
-                        get("http://localhost:8081/api/txt-users/gender?id=5")
+    void copyFromCsvTest() {
+        mockMvc.perform(
+                        post("http://localhost:8081/api/file/" +
+                                "add?path=/docker-entrypoint-initdb.d/name_gender.csv&extension=CSV")
                                 .contentType("application/json"))
-                .andExpect(status().isOk())
-                .andReturn();
-        String contentAsString = mvcResult.getResponse().getContentAsString();
-        assertThat(contentAsString).isEqualTo("F");
+                .andExpect(status().isOk());
+        List<UserCsv> all = csvUserRepository.findAll();
+        assertThat(all.size()).isEqualTo(95026);
+    }
 
+    @Test
+    @SneakyThrows
+    void copyFromXmlTest() {
+        mockMvc.perform(
+                        post("http://localhost:8081/api/file/" +
+                                "add?path=/docker-entrypoint-initdb.d/VO.xml&extension=XML")
+                                .contentType("application/json"))
+                .andExpect(status().isOk());
+        List<UserXml> all = xmlRepository.findAll();
+        assertThat(all.size()).isEqualTo(900);
     }
 }

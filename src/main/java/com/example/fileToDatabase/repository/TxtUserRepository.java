@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TxtUserRepository extends JpaRepository<UserTxt, Integer> {
-    @Query("select copy_from_txt(:filename)")
+    @Query(value = "select copy_from_txt(:filename)",nativeQuery = true)
     void copyFromTxt(String filename);
 }

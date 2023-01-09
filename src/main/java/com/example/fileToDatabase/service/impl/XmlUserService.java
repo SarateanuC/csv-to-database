@@ -1,7 +1,8 @@
-package com.example.fileToDatabase.service;
+package com.example.fileToDatabase.service.impl;
 
 import com.example.fileToDatabase.entity.UserXml;
 import com.example.fileToDatabase.repository.XmlRepository;
+import com.example.fileToDatabase.service.FileService;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
@@ -23,26 +24,35 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.IntStream;
 
-@Service
+import static org.w3c.dom.Node.ELEMENT_NODE;
+
+@Service("XML")
 @RequiredArgsConstructor
-public class XmlUserService {
+public class XmlUserService implements FileService {
     private final XmlRepository xmlRepository;
 
-    @SneakyThrows
-    public void copyUsersToTable(String path) {
-        File xmlTest = new File(path);
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        DocumentBuilder db = dbf.newDocumentBuilder();
-        Document doc = db.parse(xmlTest);
-        doc.getDocumentElement().normalize();
-        NodeList nodeList = doc.getElementsByTagName("Документ");
-        List<UserXml> userXmls = IntStream.range(0, nodeList.getLength()).mapToObj(nodeList::item)
-                .filter(node -> node.getNodeType() == Node.ELEMENT_NODE)
-                .map(this::createUserXml)
-                .toList();
-        String csvFromXml = copyToCsv(userXmls);
-        xmlRepository.copyFromXml(csvFromXml);
+    @Override
+    public boolean isCorrectExtension(String path) {
+        return path.contains(".xml");
+    }
 
+    @Override
+    @SneakyThrows
+    public void copyFromFile(String path) {
+        if (isCorrectExtension(path)) {
+            File xml = new File(path);
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.parse(xml);
+            doc.getDocumentElement().normalize();
+            NodeList nodeList = doc.getElementsByTagName("Документ");
+            List<UserXml> userXmls = IntStream.range(0, nodeList.getLength()).mapToObj(nodeList::item)
+                    .filter(node -> node.getNodeType() == ELEMENT_NODE)
+                    .map(this::createUserXml)
+                    .toList();
+            String csvFromXml = copyToCsv(userXmls);
+            xmlRepository.copyFromXml(csvFromXml);
+        }
     }
 
     private UserXml createUserXml(Node docNode) {
@@ -75,11 +85,10 @@ public class XmlUserService {
                         finalText.set(getText(eElementBasic));
                     }
                 });
-
         return UserXml.builder()
                 .documentId(eElementParent.getAttribute("ИдДок"))
                 .documentCreationDate(eElementParent.getAttribute("ДатаСост"))
-                .ONDate(eElementParent.getAttribute("ДатаВклМСП"))
+                .OnDate(eElementParent.getAttribute("ДатаВклМСП"))
                 .productivity(eElementParent.getAttribute("ПризНовМСП"))
                 .category(eElementParent.getAttribute("КатСубМСП"))
                 .view(eElementParent.getAttribute("ВидСубМСП"))
@@ -139,17 +148,15 @@ public class XmlUserService {
         int bound = thirdNodeChilds.getLength();
         for (int i = 0; i < bound; i++) {
             Node nodeChild = thirdNodeChilds.item(i);
-            if (nodeChild.getNodeType() == Node.ELEMENT_NODE) {
-                Element eElement3 = (Element) nodeChild;
-                if ("СвОКВЭДОсн".equals(nodeChild.getNodeName()) || "СвОКВЭДДоп".equals(nodeChild.getNodeName())) {
-                    String code = eElement3.getAttribute("КодОКВЭД");
-                    String text = eElement3.getAttribute("НаимОКВЭД");
-                    String version = eElement3.getAttribute("ВерсОКВЭД");
-                    String concat = " КодОКВЭД: " + code +
-                            " НаимОКВЭД: " + text +
-                            " ВерсОКВЭД: " + version;
-                    wholeRow.append(concat);
-                }
+            Element eElement3 = (Element) nodeChild;
+            if ("СвОКВЭДОсн".equals(nodeChild.getNodeName()) || "СвОКВЭДДоп".equals(nodeChild.getNodeName())) {
+                String code = eElement3.getAttribute("КодОКВЭД");
+                String text = eElement3.getAttribute("НаимОКВЭД");
+                String version = eElement3.getAttribute("ВерсОКВЭД");
+                String concat = " КодОКВЭД: " + code +
+                        " НаимОКВЭД: " + text +
+                        " ВерсОКВЭД: " + version;
+                wholeRow.append(concat);
             }
         }
         return wholeRow;
@@ -163,9 +170,9 @@ public class XmlUserService {
         mapper.configure(JsonGenerator.Feature.IGNORE_UNKNOWN, true);
 
         CsvSchema schema = CsvSchema.builder().setUseHeader(true)
-                 .addColumn("documentId")
-                .addColumn("creationDate")
-                .addColumn("ONDate")
+                .addColumn("documentId")
+                .addColumn("documentCreationDate")
+                .addColumn("OnDate")
                 .addColumn("view")
                 .addColumn("details")
                 .addColumn("category")
@@ -176,15 +183,13 @@ public class XmlUserService {
                 .addColumn("regionCode")
                 .addColumn("regionType")
                 .addColumn("regionName")
-                .addColumn(" cityType")
+                .addColumn("cityType")
                 .addColumn("cityName")
                 .addColumn("text")
                 .build();
-
         ObjectWriter writer = mapper.writerFor(UserXml.class).with(schema);
 
         writer.writeValues(csvOutputFile).writeAll(list);
-        System.out.println(csvOutputFile.getPath());
         return csvOutputFile.getPath();
     }
 }

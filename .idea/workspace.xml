@@ -4,12 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="import-by-script: update service for xml extension">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/XmlToDatabaseIntegrationTests.java" afterDir="false" />
+    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="import-by-script: add Xml testcontainer">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/FileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/CsvUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/TxtUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/XmlUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/XmlUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/changelogs/createUsersXml.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/changelogs/createUsersXml.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/CsvUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/TxtUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/XmlController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/UserXml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/UserXml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/CsvUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/CsvUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/TxtUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/TxtUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/XmlRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/XmlRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/CsvUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/TxtUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/XmlUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/XmlUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/CsvToDatabaseIntegrationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/TxtToDatabaseIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/FileToDatabaseIntegrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/XmlToDatabaseIntegrationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +33,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -42,27 +57,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/administrator/IdeaProjects/work/github/file-to-database",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "a897348dcd5a826b4f90df354a1644d9",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/administrator/IdeaProjects/work/github/file-to-database&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a897348dcd5a826b4f90df354a1644d9&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.XmlToDatabaseIntegrationTests.copyFromXmlTest">
-    <configuration name="CsvToDatabaseIntegrationTests.copyFromCsvTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}</component>
+  <component name="RunManager" selected="JUnit.FileToDatabaseIntegrationTests.copyFromXmlTest">
+    <configuration name="FileToDatabaseIntegrationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="csv-to-database" />
       <extension name="coverage">
         <pattern>
@@ -71,14 +86,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.fileToDatabase" />
-      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.CsvToDatabaseIntegrationTests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.FileToDatabaseIntegrationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileToDatabaseIntegrationTests.copyFromCsvTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csv-to-database" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.fileToDatabase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.fileToDatabase" />
+      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.FileToDatabaseIntegrationTests" />
       <option name="METHOD_NAME" value="copyFromCsvTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlToDatabaseIntegrationTests.copyFromCsvTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileToDatabaseIntegrationTests.copyFromTxtTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="csv-to-database" />
       <extension name="coverage">
         <pattern>
@@ -87,30 +117,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.fileToDatabase" />
-      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.XmlToDatabaseIntegrationTests" />
-      <option name="METHOD_NAME" value="copyFromCsvTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="XmlToDatabaseIntegrationTests.copyFromTxtTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="csv-to-database" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.fileToDatabase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.fileToDatabase" />
-      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.XmlToDatabaseIntegrationTests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.FileToDatabaseIntegrationTests" />
       <option name="METHOD_NAME" value="copyFromTxtTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlToDatabaseIntegrationTests.copyFromXmlTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileToDatabaseIntegrationTests.copyFromXmlTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="csv-to-database" />
       <extension name="coverage">
         <pattern>
@@ -119,7 +133,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.fileToDatabase" />
-      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.XmlToDatabaseIntegrationTests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.FileToDatabaseIntegrationTests" />
       <option name="METHOD_NAME" value="copyFromXmlTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -148,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.XmlToDatabaseIntegrationTests.copyFromXmlTest" />
+        <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromXmlTest" />
         <item itemvalue="Spring Boot.FileToDatabaseApplication" />
-        <item itemvalue="JUnit.XmlToDatabaseIntegrationTests.copyFromCsvTest" />
-        <item itemvalue="JUnit.XmlToDatabaseIntegrationTests.copyFromTxtTest" />
-        <item itemvalue="JUnit.CsvToDatabaseIntegrationTests.copyFromCsvTest" />
+        <item itemvalue="JUnit.FileToDatabaseIntegrationTests" />
+        <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromCsvTest" />
+        <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromTxtTest" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +185,8 @@
       <workItem from="1672732199928" duration="16798000" />
       <workItem from="1672818247705" duration="5900000" />
       <workItem from="1672905433201" duration="25351000" />
-      <workItem from="1672992554675" duration="17832000" />
+      <workItem from="1672992554675" duration="18824000" />
+      <workItem from="1673251320578" duration="10577000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1672389688797</created>
@@ -229,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673005256973</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="import-by-script: add Xml testcontainer">
+      <created>1673015098133</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673015098133</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +276,7 @@
     <MESSAGE value="import-by-script: remove unnecessary annotations" />
     <MESSAGE value="import-by-script: add service for xml extension" />
     <MESSAGE value="import-by-script: update service for xml extension" />
-    <option name="LAST_COMMIT_MESSAGE" value="import-by-script: update service for xml extension" />
+    <MESSAGE value="import-by-script: add Xml testcontainer" />
+    <option name="LAST_COMMIT_MESSAGE" value="import-by-script: add Xml testcontainer" />
   </component>
 </project>

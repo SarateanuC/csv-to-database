@@ -9,6 +9,6 @@ import java.util.UUID;
 
 @Repository
 public interface XmlRepository extends JpaRepository<UserXml, UUID> {
-    @Query("select copy_from_xml(:filename)")
+    @Query(value = "select copy_from_xml(?1)",nativeQuery = true)
     void copyFromXml(String filename);
 }

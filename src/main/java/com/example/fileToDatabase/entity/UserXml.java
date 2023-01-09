@@ -16,7 +16,7 @@ public class UserXml {
     @Id
     private String documentId;
     private String documentCreationDate;
-    private String ONDate;
+    private String OnDate;
     private String view;
     private String details;
     private String category;
