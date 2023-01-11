@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="import-by-script: implement strategy design pattern">
+    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="import-by-script: refactor xml-service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/XmlUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/XmlUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/FileToDatabaseIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/FileToDatabaseIntegrationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.FileToDatabaseIntegrationTests.copyFromXmlTest">
+  <component name="RunManager" selected="JUnit.FileToDatabaseIntegrationTests">
     <configuration name="FileToDatabaseIntegrationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="csv-to-database" />
       <extension name="coverage">
@@ -146,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromXmlTest" />
+        <item itemvalue="JUnit.FileToDatabaseIntegrationTests" />
         <item itemvalue="Spring Boot.FileToDatabaseApplication" />
+        <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromXmlTest" />
         <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromTxtTest" />
         <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromCsvTest" />
-        <item itemvalue="JUnit.FileToDatabaseIntegrationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +170,9 @@
       <workItem from="1672818247705" duration="5900000" />
       <workItem from="1672905433201" duration="25351000" />
       <workItem from="1672992554675" duration="18824000" />
-      <workItem from="1673251320578" duration="22040000" />
+      <workItem from="1673251320578" duration="23918000" />
+      <workItem from="1673337639244" duration="10365000" />
+      <workItem from="1673421104226" duration="306000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1672389688797</created>
@@ -242,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673264230634</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="import-by-script: refactor xml-service">
+      <created>1673278519062</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673278519062</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,22 +278,7 @@
     <MESSAGE value="import-by-script: update service for xml extension" />
     <MESSAGE value="import-by-script: add Xml testcontainer" />
     <MESSAGE value="import-by-script: implement strategy design pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="import-by-script: implement strategy design pattern" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/FileToDatabaseIntegrationTests.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/XmlUserService.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="import-by-script: refactor xml-service" />
+    <option name="LAST_COMMIT_MESSAGE" value="import-by-script: refactor xml-service" />
   </component>
 </project>
