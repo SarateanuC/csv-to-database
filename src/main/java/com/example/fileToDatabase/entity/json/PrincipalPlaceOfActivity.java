@@ -16,4 +16,15 @@ public class PrincipalPlaceOfActivity {
     @Id
     @GeneratedValue
     private UUID id;
+    private String address1;
+    private String address2;
+    private String address3;
+    private String address4;
+    private String careOf;
+    private String countryCode;
+    private String endDate;
+    private String pafID;
+    private String postCode;
+    private String startDate;
+    private String uniqueIdentifier;
 }

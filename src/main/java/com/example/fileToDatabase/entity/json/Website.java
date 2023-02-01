@@ -16,4 +16,7 @@ public class Website {
     @Id
     @GeneratedValue
     private UUID id;
+    private String startDate;
+    private String uniqueIdentifier;
+    private String url;
 }

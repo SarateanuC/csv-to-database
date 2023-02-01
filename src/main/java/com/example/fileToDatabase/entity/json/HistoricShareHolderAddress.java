@@ -24,7 +24,7 @@ public class HistoricShareHolderAddress {
     private String careOf;
     private String countryCode;
     private String endDate;
-    private String pafId;
+    private String pafID;
     private String postCode;
     private String startDate;
     private String uniqueIdentifier;

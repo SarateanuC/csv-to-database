@@ -25,7 +25,7 @@ public class OtherAddress {
     private String countryCode;
     private String description;
     private String endDate;
-    private String pafId;
+    private String pafID;
     private String postCode;
     private String startDate;
     private String uniqueIdentifier;

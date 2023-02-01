@@ -9,10 +9,12 @@ import lombok.*;
 import java.util.List;
 import java.util.UUID;
 
+import static jakarta.persistence.CascadeType.ALL;
+
 @Entity
 @Builder
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class InsolvencyAppointee {
@@ -21,13 +23,13 @@ public class InsolvencyAppointee {
     private UUID id;
     private String appointmentDate;
     private String email;
-    private String firstname;
+    private String firstName;
     private String fullName;
-    @OneToMany
-    private List<InsolvencyAppointeeAddress> insolvencyAppointeeAddressList;
-    @OneToMany
-    private List<InsolvencyAppointeePhoneNumber> phoneNumbers;
-    private String lastname;
+    @OneToMany(cascade= ALL)
+    private List<InsolvencyAppointeeAddress> insolvencyAppointeeAddress;
+    @OneToMany(cascade= ALL)
+    private List<InsolvencyAppointeePhoneNumber> insolvencyAppointeePhoneNumber;
+    private String lastName;
     private String middleNames;
     private String organisationName;
     private String vacationDate;

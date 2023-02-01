@@ -17,4 +17,11 @@ public class PhoneNumber {
     @Id
     @GeneratedValue
     private UUID uuid;
+    private String phoneAreaCode;
+    private String phoneCountryCode;
+    private String phoneNumber;
+    private String phonePurpose;
+    private String phonePurposeDescription;
+    private String startDate;
+    private String uniqueIdentifier;
 }

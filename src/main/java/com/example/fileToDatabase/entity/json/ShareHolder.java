@@ -4,13 +4,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.UUID;
 
+import static jakarta.persistence.CascadeType.ALL;
+
 @Entity
-@Builder
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,13 +23,13 @@ public class ShareHolder {
     @Id
     @GeneratedValue
     private UUID id;
-    private String appointmentDate;
-    @OneToMany
-    private List<IndividualShareHolder> individualShareHolderList;
-    @OneToMany
-    private List<OtherShareHolder> otherShareHolders;
-    @OneToMany
-    private List<ShareHolderAddress> shareHolderAddresses;
-    private String type;
     private String vacationDate;
+    private String type;
+    @OneToMany(cascade= ALL)
+    private List<ShareHolderAddress> shareholderAddress;
+    @OneToMany(cascade= ALL)
+    private List<OtherShareHolder> otherShareholder;
+    private String appointmentDate;
+    @OneToMany(cascade= ALL)
+    private List<IndividualShareHolder> individualShareholder;
 }

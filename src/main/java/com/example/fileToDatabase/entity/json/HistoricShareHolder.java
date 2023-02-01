@@ -8,10 +8,13 @@ import lombok.*;
 
 import java.util.List;
 import java.util.UUID;
+
+import static jakarta.persistence.CascadeType.ALL;
+
 @Entity
 @Builder
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class HistoricShareHolder {
@@ -19,12 +22,13 @@ public class HistoricShareHolder {
     @GeneratedValue
     private UUID id;
     private String appointmentDate;
-    @OneToMany
-    private List<HistoricIndividualShareHolder> historicIndividualShareHolderList;
-    @OneToMany
-    private List<HistoricOtherShareHolder> historicOtherShareHolders;
-    @OneToMany
-    private List<HistoricShareHolderAddress> historicShareHolderAddresses;
+    @OneToMany(cascade= ALL)
+    private List<HistoricalIndividualShareHolder> historicIndividualShareholder;
+    @OneToMany(cascade= ALL)
+    private List<HistoricOtherShareHolder> historicOtherShareholder;
+    @OneToMany(cascade= ALL)
+    private List<HistoricShareHolderAddress> historicShareholderAddress;
     private String type;
     private String vacationDate;
+
 }

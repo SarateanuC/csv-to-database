@@ -9,6 +9,8 @@ import lombok.*;
 import java.util.List;
 import java.util.UUID;
 
+import static jakarta.persistence.CascadeType.ALL;
+
 @Entity
 @Getter
 @Setter
@@ -20,16 +22,16 @@ public class Roles {
     @GeneratedValue
     private UUID id;
     private String acn;
-    private String asicDirectorShipYn;
+    private String asicDirectorshipYn;
     private String asicName;
     private String endDate;
+    @OneToMany(cascade= ALL)
+    private List<RoleAddress> roleAddress;
     @OneToMany
-    private List<RoleAddress> roleAddressList;
-    @OneToMany
-    private List<RoleAddressAsic> roleAddressAsicLis;
+    private List<RoleAddressAsic> roleAsicAddress;
     private String roleEntity;
     @OneToMany
-    private List<RolePerson> rolePersonList;
+    private List<RolePerson> rolePerson;
     private String roleStatus;
     private String roleType;
     private String startDate;

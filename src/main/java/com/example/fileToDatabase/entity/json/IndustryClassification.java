@@ -9,10 +9,10 @@ import java.util.UUID;
 
 @Entity
 @Builder
-@Setter
 @Getter
-@NoArgsConstructor
+@Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class IndustryClassification {
     @Id
     @GeneratedValue

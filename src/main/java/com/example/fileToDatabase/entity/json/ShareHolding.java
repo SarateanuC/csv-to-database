@@ -9,18 +9,19 @@ import lombok.*;
 import java.util.List;
 import java.util.UUID;
 
+import static jakarta.persistence.CascadeType.ALL;
+
 @Entity
 @Builder
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class ShareHolding {
     @Id
     @GeneratedValue
     private UUID id;
     private String numberOfShares;
-    @OneToMany
-    private List<ShareAllocation> shareAllocationList;
-
+    @OneToMany(cascade= ALL)
+    private List<ShareAllocation> shareAllocation;
 }

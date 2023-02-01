@@ -3,22 +3,25 @@ package com.example.fileToDatabase.entity.json;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
 @Entity
 @Getter
 @Setter
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class HistoricIndividualShareHolder {
+@AllArgsConstructor
+public class HistoricalIndividualShareHolder {
     @Id
     @GeneratedValue
     private UUID id;
-    private String firstname;
-    private String fullName;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String middleNames;
+    private String fullName;
 }
+

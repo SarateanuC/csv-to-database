@@ -9,17 +9,21 @@ import lombok.*;
 import java.util.List;
 import java.util.UUID;
 
+import static jakarta.persistence.CascadeType.ALL;
+
 @Entity
 @Builder
-@Setter
 @Getter
-@NoArgsConstructor
+@Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class InsolvencyDetails {
     @Id
     @GeneratedValue
     private UUID id;
     private String commenced;
-    @OneToMany
-    private List<InsolvencyAppointee> insolvencyAppointeeList;
+    @OneToMany(cascade= ALL)
+    private List<InsolvencyAppointee> insolvencyAppointee;
+    @OneToMany(cascade= ALL)
+    private List<InsolvencyReport> insolvencyReport;
 }

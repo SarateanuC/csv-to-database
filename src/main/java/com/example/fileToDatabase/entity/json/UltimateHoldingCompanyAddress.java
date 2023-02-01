@@ -22,10 +22,11 @@ public class UltimateHoldingCompanyAddress {
     private String address3;
     private String address4;
     private String careOf;
-    private String postCode;
+    private String countryCode;
     private String description;
     private String endDate;
     private String pafId;
+    private String postCode;
     private String startDate;
     private String uniqueIdentifier;
 }

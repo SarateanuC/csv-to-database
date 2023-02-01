@@ -9,19 +9,20 @@ import java.util.UUID;
 
 @Entity
 @Builder
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class InsolvencyAppointeePhoneNumber {
     @Id
     @GeneratedValue
     private UUID id;
-    private String phoneAreCode;
+    private String phoneAreaCode;
     private String phoneCountryCode;
     private String phoneNumber;
     private String phonePurpose;
     private String phonePurposeDescription;
     private String startDate;
     private String uniqueIdentifier;
+
 }

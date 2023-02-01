@@ -5,47 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="init project">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20220924.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Company.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/CompanyJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EmailAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityNames.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricIndividualShareHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricOtherShareHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricShareHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricShareHolderAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/IndividualShareHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/IndustryClassification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointeeAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointeePhoneNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/OtherAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/OtherShareHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PhoneNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PhysicalAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PostalAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PrincipalPlaceOfActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RegisteredAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RoleAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RoleAddressAsic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RolePerson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Roles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareAllocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolderAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/TradingNames.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/UltimateHoldingCompany.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/UltimateHoldingCompanyAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Website.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_json_jakarta_json_api_2_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricalIndividualShareHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/JsonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv-to-database.iml" beforeDir="false" afterPath="$PROJECT_DIR$/csv-to-database.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/CompanyJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/CompanyJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EmailAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EmailAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricOtherShareHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricOtherShareHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricShareHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricShareHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricShareHolderAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricShareHolderAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/IndividualShareHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/IndividualShareHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/IndustryClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/IndustryClassification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointeePhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointeePhoneNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/OtherAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/OtherAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/OtherShareHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/OtherShareHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PhoneNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PhysicalAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PhysicalAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PrincipalPlaceOfActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PrincipalPlaceOfActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RegisteredAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RegisteredAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RolePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RolePerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Roles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareAllocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareAllocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/TradingNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/TradingNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/UltimateHoldingCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/UltimateHoldingCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/UltimateHoldingCompanyAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/UltimateHoldingCompanyAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Website.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Website.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,25 +78,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Carolina/IdeaProjects/BookingProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "a897348dcd5a826b4f90df354a1644d9",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Carolina/IdeaProjects/BookingProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a897348dcd5a826b4f90df354a1644d9&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>

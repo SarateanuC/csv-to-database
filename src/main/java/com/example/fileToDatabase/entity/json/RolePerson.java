@@ -17,8 +17,8 @@ public class RolePerson {
     @Id
     @GeneratedValue
     private UUID id;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String middleNames;
     private String title;
 }

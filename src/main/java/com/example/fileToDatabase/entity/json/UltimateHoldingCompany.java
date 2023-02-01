@@ -9,6 +9,8 @@ import lombok.*;
 import java.util.List;
 import java.util.UUID;
 
+import static jakarta.persistence.CascadeType.ALL;
+
 @Entity
 @Getter
 @Setter
@@ -25,7 +27,7 @@ public class UltimateHoldingCompany {
     private String number;
     private String nzbn;
     private String type;
-    @OneToMany
-    private List<UltimateHoldingCompanyAddress> ultimateHoldingCompanyAddressList;
+    @OneToMany(cascade= ALL)
+    private List<UltimateHoldingCompanyAddress> ultimateHoldingCompanyAddress;
     private String yn;
 }

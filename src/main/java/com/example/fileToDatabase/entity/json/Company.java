@@ -9,25 +9,27 @@ import lombok.*;
 import java.util.List;
 import java.util.UUID;
 
+import static jakarta.persistence.CascadeType.ALL;
+
 @Entity
+@Builder
 @Setter
 @Getter
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Company {
     @Id
     @GeneratedValue
     private UUID id;
+    private String annualReturnFilingMonth;
     private String annualReturnLastFiled;
-    private String annualReturnFillingMonth;
     private String countryOfOrigin;
-    private String extensiveShareHolding;
-    private String financialReportFillingMonth;
-    private String hasConstitutionFiled;
+    private String extensiveShareholding;
+    private String financialReportFilingMonth;
+    private boolean hasConstitutionFiled;
     private String nzsxCode;
     private String overseasCompany;
-    @OneToMany
-    private List<ShareHolding> shareHolding;
+    @OneToMany(cascade= ALL)
+    private List<ShareHolding> shareholding;
     private String stockExchangeListed;
 }

@@ -6,18 +6,18 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 import java.util.UUID;
+
 @Entity
 @Builder
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class OtherShareHolder {
+@NoArgsConstructor
+public class InsolvencyReport {
     @Id
     @GeneratedValue
     private UUID id;
-    private String companyNumber;
-    private String currentEntityName;
-    private String entityType;
-    private String nzbn;
+    private String date;
+    private String filed;
+    private String name;
 }

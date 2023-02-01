@@ -16,4 +16,7 @@ public class TradingNames {
     @Id
     @GeneratedValue
     private UUID id;
+    private String name;
+    private String startDate;
+    private String uniqueIdentifier;
 }

@@ -1,10 +1,15 @@
 package com.example.fileToDatabase.entity.json;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.*;
 
 import java.util.List;
 import java.util.UUID;
+
+import static jakarta.persistence.CascadeType.ALL;
 
 @Entity
 @Setter
@@ -19,58 +24,56 @@ public class CompanyJson {
     private String australianBusinessNumber;
     private String australianCompanyNumber;
     private String australianServiceAddress;
-    @OneToMany
+    @OneToMany(cascade = ALL)
     private List<Company> company;
-    @OneToMany
-    private List<EmailAddress> emailAddresses;
+    @OneToMany(cascade = ALL)
+    private List<EmailAddress> emailAddress;
     private String entityName;
-    @OneToMany
+    @OneToMany(cascade = ALL)
     private List<EntityNames> entityNames;
-    @OneToMany
-    private List<EntityStatus> entityStatuses;
+    @OneToMany(cascade = ALL)
+    private List<EntityStatus> entityStatus;
     private String entityStatusCode;
     private String entityStatusDescription;
     private String entityTypeCode;
     private String entityTypeDescription;
+    private String gstEffectiveDate;
+    private String gstStatus;
     private String gstEffectiveStatusDescription;
-    @OneToMany
-    private List<HistoricShareHolder> historicShareHolders;
-    @OneToMany
-    private List<IndustryClassification>industryClassifications;
-    @OneToMany
+    @OneToMany(cascade = ALL)
+    private List<HistoricShareHolder> historicShareholder;
+    @OneToMany(cascade = ALL)
+    private List<IndustryClassification> industryClassification;
+    @OneToMany(cascade = ALL)
     private List<InsolvencyDetails> insolvencyDetails;
-    private String lastUpdateDate;
+    private String lastUpdatedDate;
     private String locationIdentifier;
     private String nzbn;
-    @OneToMany
-    private List<OtherAddress> otherAddresses;
-    @OneToMany
-    private List<PhoneNumber> phoneNumbers;
-    @OneToMany
-    private List<PhysicalAddress> physicalAddresses;
-    @OneToMany
-    private List<PostalAddress> postalAddresses;
-    @OneToMany
-    private List<PrincipalPlaceOfActivity> principalPlaceOfActivities;
+    @OneToMany(cascade = ALL)
+    private List<OtherAddress> otherAddress;
+    @OneToMany(cascade = ALL)
+    private List<PhoneNumber> phoneNumber;
+    @OneToMany(cascade = ALL)
+    private List<PhysicalAddress> physicalAddress;
+    @OneToMany(cascade = ALL)
+    private List<PostalAddress> postalAddress;
+    @OneToMany(cascade = ALL)
+    private List<PrincipalPlaceOfActivity> principalPlaceOfActivity;
     private String privacySettings;
-    @OneToMany
-    private List<RegisteredAddress> registeredAddresses;
+    @OneToMany(cascade = ALL)
+    private List<RegisteredAddress> registeredAddress;
     private String registrationDate;
-    @OneToMany
+    @OneToMany(cascade = ALL)
     private List<Roles> roles;
     private String sourceRegister;
     private String sourceRegisterUniqueIdentifier;
     private String roleStatus;
     private String startDate;
     private String supportingInformation;
-    @OneToMany
+    @OneToMany(cascade = ALL)
     private List<TradingNames> tradingNames;
-    @OneToMany
-    private List<UltimateHoldingCompany> ultimateHoldingCompanies;
-    @OneToMany
-    private List<Website> websites;
-
-
-
-
+    @OneToMany(cascade = ALL)
+    private List<UltimateHoldingCompany> ultimateHoldingCompany;
+    @OneToMany(cascade = ALL)
+    private List<Website> website;
 }
