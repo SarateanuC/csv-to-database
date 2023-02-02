@@ -4,47 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="init project">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_json_jakarta_json_api_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricalIndividualShareHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/JsonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonUserService.java" afterDir="false" />
+    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="importByScript: add copy method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv-to-database.iml" beforeDir="false" afterPath="$PROJECT_DIR$/csv-to-database.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/CompanyJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/CompanyJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EmailAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EmailAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityNames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/EntityStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricOtherShareHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricOtherShareHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricShareHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricShareHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricShareHolderAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/HistoricShareHolderAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/IndividualShareHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/IndividualShareHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/IndustryClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/IndustryClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointeePhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyAppointeePhoneNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/InsolvencyDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/OtherAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/OtherAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/OtherShareHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/OtherShareHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PhoneNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PhysicalAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PhysicalAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PrincipalPlaceOfActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/PrincipalPlaceOfActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RegisteredAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RegisteredAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RolePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/RolePerson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareAllocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareAllocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/ShareHolding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/TradingNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/TradingNames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/UltimateHoldingCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/UltimateHoldingCompany.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/UltimateHoldingCompanyAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/UltimateHoldingCompanyAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Website.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Website.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/FileToDatabaseIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/FileToDatabaseIntegrationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +87,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileToDatabaseIntegrationTests.copyFromCsvTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileToDatabaseIntegrationTests.copyFromJsonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="csv-to-database" />
       <extension name="coverage">
         <pattern>
@@ -130,7 +97,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.fileToDatabase" />
       <option name="MAIN_CLASS_NAME" value="com.example.fileToDatabase.FileToDatabaseIntegrationTests" />
-      <option name="METHOD_NAME" value="copyFromCsvTest" />
+      <option name="METHOD_NAME" value="copyFromJsonTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,13 +135,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CsvToDatabaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="csv-to-database" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.csvtodatabase.CsvToDatabaseApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FileToDatabaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="csv-to-database" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.fileToDatabase.FileToDatabaseApplication" />
@@ -191,10 +151,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.FileToDatabaseApplication" />
+        <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromJsonTest" />
         <item itemvalue="JUnit.FileToDatabaseIntegrationTests" />
         <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromXmlTest" />
         <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromTxtTest" />
-        <item itemvalue="JUnit.FileToDatabaseIntegrationTests.copyFromCsvTest" />
       </list>
     </recent_temporary>
   </component>
@@ -217,6 +177,7 @@
       <workItem from="1673251320578" duration="23918000" />
       <workItem from="1673337639244" duration="10365000" />
       <workItem from="1673421104226" duration="306000" />
+      <workItem from="1675323663477" duration="11494000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1672389688797</created>
@@ -295,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673278519062</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="importByScript: add copy method">
+      <created>1675264678794</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1675264678794</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +291,7 @@
     <MESSAGE value="import-by-script: add Xml testcontainer" />
     <MESSAGE value="import-by-script: implement strategy design pattern" />
     <MESSAGE value="import-by-script: refactor xml-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="import-by-script: refactor xml-service" />
+    <MESSAGE value="importByScript: add copy method" />
+    <option name="LAST_COMMIT_MESSAGE" value="importByScript: add copy method" />
   </component>
 </project>

@@ -3,7 +3,9 @@ package com.example.fileToDatabase;
 import com.example.fileToDatabase.entity.UserCsv;
 import com.example.fileToDatabase.entity.UserTxt;
 import com.example.fileToDatabase.entity.UserXml;
+import com.example.fileToDatabase.entity.json.CompanyJson;
 import com.example.fileToDatabase.repository.CsvUserRepository;
+import com.example.fileToDatabase.repository.JsonRepository;
 import com.example.fileToDatabase.repository.TxtUserRepository;
 import com.example.fileToDatabase.repository.XmlRepository;
 import lombok.SneakyThrows;
@@ -44,6 +46,8 @@ class FileToDatabaseIntegrationTests {
     private CsvUserRepository csvUserRepository;
     @Autowired
     private XmlRepository xmlRepository;
+    @Autowired
+    private JsonRepository jsonRepository;
 
     @Container
     private static final PostgreSQLContainer POSTGRES_SQL_CONTAINER =
@@ -108,5 +112,17 @@ class FileToDatabaseIntegrationTests {
                 .andExpect(status().isOk());
         List<UserXml> all = xmlRepository.findAll();
         assertThat(all.size()).isEqualTo(900);
+    }
+
+    @Test
+    @SneakyThrows
+    void copyFromJsonTest() {
+        mockMvc.perform(
+                        post("http://localhost:8081/api/file/" +
+                                "add?path=/docker-entrypoint-initdb.d/json/20190902_1.json&extension=JSON")
+                                .contentType("application/json"))
+                .andExpect(status().isOk());
+        List<CompanyJson> all = jsonRepository.findAll();
+        assertThat(all.size()).isEqualTo(292621);
     }
 }

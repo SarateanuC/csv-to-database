@@ -27,10 +27,10 @@ public class Roles {
     private String endDate;
     @OneToMany(cascade= ALL)
     private List<RoleAddress> roleAddress;
-    @OneToMany
+    @OneToMany(cascade= ALL)
     private List<RoleAddressAsic> roleAsicAddress;
     private String roleEntity;
-    @OneToMany
+    @OneToMany(cascade= ALL)
     private List<RolePerson> rolePerson;
     private String roleStatus;
     private String roleType;
