@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="importByScript: add copy method">
+    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="importByScript: refactor json service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/entity/json/Roles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/FileToDatabaseIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fileToDatabase/FileToDatabaseIntegrationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +174,7 @@
       <workItem from="1673251320578" duration="23918000" />
       <workItem from="1673337639244" duration="10365000" />
       <workItem from="1673421104226" duration="306000" />
-      <workItem from="1675323663477" duration="11494000" />
+      <workItem from="1675323663477" duration="16819000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1672389688797</created>
@@ -263,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675264678794</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="importByScript: refactor json service">
+      <created>1675336831633</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1675336831633</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +296,7 @@
     <MESSAGE value="import-by-script: implement strategy design pattern" />
     <MESSAGE value="import-by-script: refactor xml-service" />
     <MESSAGE value="importByScript: add copy method" />
-    <option name="LAST_COMMIT_MESSAGE" value="importByScript: add copy method" />
+    <MESSAGE value="importByScript: refactor json service" />
+    <option name="LAST_COMMIT_MESSAGE" value="importByScript: refactor json service" />
   </component>
 </project>
