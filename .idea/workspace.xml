@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="importByScript: refactor json service">
+    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="importByScript: add hibernate batch processing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +174,8 @@
       <workItem from="1673251320578" duration="23918000" />
       <workItem from="1673337639244" duration="10365000" />
       <workItem from="1673421104226" duration="306000" />
-      <workItem from="1675323663477" duration="16819000" />
+      <workItem from="1675323663477" duration="20146000" />
+      <workItem from="1675409989131" duration="2900000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1672389688797</created>
@@ -267,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675336831633</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="importByScript: add hibernate batch processing">
+      <created>1675346063067</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1675346063067</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +305,7 @@
     <MESSAGE value="import-by-script: refactor xml-service" />
     <MESSAGE value="importByScript: add copy method" />
     <MESSAGE value="importByScript: refactor json service" />
-    <option name="LAST_COMMIT_MESSAGE" value="importByScript: refactor json service" />
+    <MESSAGE value="importByScript: add hibernate batch processing" />
+    <option name="LAST_COMMIT_MESSAGE" value="importByScript: add hibernate batch processing" />
   </component>
 </project>
