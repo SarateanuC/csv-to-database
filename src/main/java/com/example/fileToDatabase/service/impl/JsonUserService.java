@@ -13,10 +13,13 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import static com.fasterxml.jackson.core.JsonToken.END_ARRAY;
 import static com.fasterxml.jackson.core.JsonToken.START_ARRAY;
+import static java.util.stream.Collectors.*;
+import static java.util.stream.IntStream.range;
 
 @Service("JSON")
 @RequiredArgsConstructor
@@ -32,9 +35,8 @@ public class JsonUserService implements FileService {
     @SneakyThrows
     public void copyFromFile(String path) {
         if (isCorrectExtension(path)) {
-            File jsonFile = new File(path).getAbsoluteFile();
             ObjectMapper objectMapper = new ObjectMapper();
-            try (JsonParser jp = new JsonFactory().createParser(jsonFile)) {
+            try (JsonParser jp = new JsonFactory().createParser(new File(path).getAbsoluteFile())) {
                 List<CompanyJson> value = new ArrayList<>();
                 for (int i = 0; i < 6; i++) {
                     jp.nextToken();
@@ -42,7 +44,12 @@ public class JsonUserService implements FileService {
                         while (jp.nextToken() != END_ARRAY) {
                             value.add(objectMapper.readValue(jp, CompanyJson.class));
                         }
-                        value.parallelStream().forEach(jsonRepository::save);
+                        Collection<List<CompanyJson>> partitionedList = range(0, value.size())
+                                .boxed()
+                                .collect(groupingBy(partition -> (partition / 30),
+                                        mapping(value::get, toList())))
+                                .values();
+                        partitionedList.parallelStream().forEach(jsonRepository::saveAll);
                     }
                 }
             } catch (IOException e) {
