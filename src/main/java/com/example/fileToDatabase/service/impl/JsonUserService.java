@@ -46,7 +46,7 @@ public class JsonUserService implements FileService {
                         }
                         Collection<List<CompanyJson>> partitionedList = range(0, value.size())
                                 .boxed()
-                                .collect(groupingBy(partition -> (partition / 30),
+                                .collect(groupingBy(partition -> (partition / 50),
                                         mapping(value::get, toList())))
                                 .values();
                         partitionedList.parallelStream().forEach(jsonRepository::saveAll);

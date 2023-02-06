@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="importByScript: refactor json service">
+    <list default="true" id="a65187a0-05ef-4bac-80f1-73ecb89c8071" name="Changes" comment="importByScript: refactor json service performance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/FileToDatabaseApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/JsonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/repository/JsonRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fileToDatabase/service/impl/JsonUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -177,7 +176,7 @@
       <workItem from="1673421104226" duration="306000" />
       <workItem from="1675323663477" duration="20146000" />
       <workItem from="1675409989131" duration="25367000" />
-      <workItem from="1675671069481" duration="12105000" />
+      <workItem from="1675671069481" duration="12731000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1672389688797</created>
@@ -284,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675413379946</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="importByScript: refactor json service performance">
+      <created>1675683582993</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1675683582993</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +321,7 @@
     <MESSAGE value="importByScript: add copy method" />
     <MESSAGE value="importByScript: add hibernate batch processing" />
     <MESSAGE value="importByScript: refactor json service" />
-    <option name="LAST_COMMIT_MESSAGE" value="importByScript: refactor json service" />
+    <MESSAGE value="importByScript: refactor json service performance" />
+    <option name="LAST_COMMIT_MESSAGE" value="importByScript: refactor json service performance" />
   </component>
 </project>
